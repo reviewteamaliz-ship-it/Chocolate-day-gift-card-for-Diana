@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Diana ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{box-sizing:border-box;font-family:'Poppins', sans-serif}
+body{
+  margin:0;
+  background:#050b14;
+  overflow-x:hidden;
+  color:#fff;
+}
+/* 🌈 ENHANCED SOFT BACKGROUND ANIMATION */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-40%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,77,109,.25), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(255,143,171,.25), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(132,94,194,.25), transparent 40%);
+  animation:bgFloat 18s linear infinite;
+  z-index:-2;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><filter id="a"><feTurbulence baseFrequency="0.01" numOctaves="3" seed="1"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0.56 0.68 0 0 0 0 0.76 0 0 0 0.15 0"/></filter></defs><rect width="100" height="100" filter="url(%23a)" opacity="0.3"/></svg>');
+  z-index:-1;
+  opacity:0.5;
+}
+@keyframes bgFloat{
+  0%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-80px) rotate(180deg)}
+  100%{transform:translateY(0) rotate(360deg)}
+}
+/* COMMON */
+.page{
+  width:100vw;height:100vh;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+  overflow:hidden;
+  position:relative;
+}
+.page.active{display:flex}
+h1,h2,p{margin:.4em 0}
+h1{font-size:2.5rem; text-shadow:0 4px 12px rgba(0,0,0,0.4);}
+h2{font-size:2rem;}
+button{
+  padding:14px 36px;
+  border:0;border-radius:40px;
+  background:linear-gradient(135deg,#ff4d6d,#c9184a);
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 12px 30px rgba(255,77,109,.4);
+  transition:.25s;
+  font-weight:600;
+  letter-spacing:0.5px;
+  position:relative;
+  overflow:hidden;
+  z-index:1;
+}
+button::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition:0.5s;
+}
+button:hover::before{
+  left:100%;
+}
+button:hover{transform:scale(1.05); box-shadow:0 16px 40px rgba(255,77,109,.6);}
+/* Floating hearts */
+.floating-heart {
+  position:absolute;
+  color:#ff8fab;
+  font-size:20px;
+  z-index:0;
+  opacity:0;
+  animation:floatUp 8s linear infinite;
+}
+@keyframes floatUp {
+  0% { transform:translateY(100vh) rotate(0deg); opacity:0; }
+  10% { opacity:0.8; }
+  90% { opacity:0.8; }
+  100% { transform:translateY(-20vh) rotate(360deg); opacity:0; }
+}
+/* Music toggle */
+.music-toggle {
+  position:fixed;
+  top:20px;
+  right:20px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(5px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:1000;
+  font-size:24px;
+  color:#ff8fab;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  transition:all 0.3s;
+}
+.music-toggle:hover {
+  transform:scale(1.1);
+  background:rgba(255,255,255,0.2);
+}
+/* ---------- PAGE 1 ENHANCED ---------- */
+#p1 h1 {
+  animation:titleGlow 3s infinite alternate;
+}
+@keyframes titleGlow {
+  from {text-shadow:0 4px 12px rgba(255,77,109,0.7);}
+  to {text-shadow:0 4px 20px rgba(255,143,171,0.9), 0 0 30px rgba(255,143,171,0.5);}
+}
+.scene{
+  position:relative;
+  width:92%;
+  max-width:960px;
+  height:440px;
+  border-radius:26px;
+  overflow:hidden;
+  background:url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/2000px-World_map_-_low_resolution.svg.png") center/cover no-repeat;
+  box-shadow:0 30px 60px rgba(0,0,0,.7), inset 0 0 0 1px rgba(255,255,255,0.1);
+  z-index:2;
+}
+.scene::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,rgba(255,255,255,.06),rgba(0,0,0,.75))
+}
+.marker{
+  position:absolute;
+  z-index:3;
+  padding:6px 14px;
+  border-radius:20px;
+  background:rgba(0,0,0,.8);
+  backdrop-filter:blur(4px);
+  animation:pulse 1.6s infinite;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,0.1);
+}
+#india{left:22%;top:70%;}
+#ukraine{left:72%;top:28%;}
+@keyframes pulse{
+  0%{box-shadow:0 0 8px #ff4d6d, 0 0 0 0 rgba(255,77,109,0.4);}
+  70%{box-shadow:0 0 18px #ff8fab, 0 0 0 10px rgba(255,77,109,0);}
+  100%{box-shadow:0 0 8px #ff4d6d, 0 0 0 0 rgba(255,77,109,0);}
+}
+#choco{
+  position:absolute;
+  z-index:4;
+  font-size:44px;
+  left:22%;
+  top:70%;
+  transform:translate(-50%,-50%);
+  filter:drop-shadow(0 0 10px rgba(255,77,109,.55));
+  animation:chocoFloat 2s infinite alternate ease-in-out;
+}
+@keyframes chocoFloat {
+  from {transform:translate(-50%,-50%) rotate(-5deg);}
+  to {transform:translate(-50%,-50%) rotate(5deg) translateY(-10px);}
+}
+.trail{
+  position:absolute;
+  width:10px;height:10px;
+  border-radius:50%;
+  background:#ff8fab;
+  box-shadow:0 0 14px #ff4d6d;
+  animation:fade 1s forwards;
+  z-index:2;
+}
+@keyframes fade{to{opacity:0;transform:scale(2.2);}}
+.star{
+  position:absolute;
+  background:#fff;
+  border-radius:50%;
+  opacity:.35;
+  animation:twinkle 3s infinite;
+}
+@keyframes twinkle{50%{opacity:.8;}}
+.arc{
+  position:absolute;
+  right:18px;bottom:18px;
+  width:84px;height:84px;
+  border-radius:50%;
+  background:conic-gradient(#ff4d6d 0deg, rgba(255,255,255,.15) 0deg);
+  box-shadow:0 0 20px rgba(255,77,109,0.5);
+  border:2px solid rgba(255,255,255,0.1);
+}
+.arc span{
+  position:absolute;
+  inset:8px;
+  border-radius:50%;
+  background:#050b14;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  font-weight:600;
+}
+/* ---------- PAGE 2 ENHANCED ---------- */
+.reader{
+  background:rgba(255,255,255,.97);
+  color:#4a1c1c;
+  padding:44px;
+  border-radius:30px;
+  max-width:820px;
+  font-size:22px;
+  line-height:1.8;
+  animation:breath 3s infinite;
+  max-height:60vh;
+  overflow-y:auto;
+  box-shadow:0 20px 50px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.2);
+  position:relative;
+  z-index:2;
+}
+@keyframes breath{
+  0%, 100% {transform:scale(1);}
+  50% {transform:scale(1.02);}
+}
+.hearts span{
+  position:absolute;
+  color:#ff8fab;
+  animation:float 6s linear infinite;
+  z-index:1;
+}
+@keyframes float{
+  from{transform:translateY(100vh) rotate(0deg);}
+  to{transform:translateY(-10vh) rotate(360deg); opacity:0;}
+}
+.scrollBtn{
+  margin-top:14px;
+  font-size:14px;
+  opacity:.85;
+  animation:bounce 1.6s infinite;
+  cursor:pointer;
+  background:rgba(255,255,255,0.1);
+  padding:8px 16px;
+  border-radius:20px;
+  backdrop-filter:blur(5px);
+  z-index:2;
+}
+@keyframes bounce{50%{transform:translateY(6px);}}
+/* ENVELOPE SURPRISE */
+.envelope {
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  width:80px;
+  height:60px;
+  background:#ff4d6d;
+  border-radius:8px;
+  cursor:pointer;
+  z-index:3;
+  transition:all 0.5s;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+.envelope:hover {
+  transform:scale(1.1);
+}
+.envelope:before {
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(255,255,255,0.1);
+  border-radius:8px;
+}
+.envelope:after {
+  content:'✉️';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:24px;
+}
+.envelope-message {
+  position:absolute;
+  bottom:90px;
+  right:20px;
+  background:rgba(255,255,255,0.95);
+  color:#4a1c1c;
+  padding:15px;
+  border-radius:15px;
+  max-width:250px;
+  font-size:14px;
+  line-height:1.5;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.5s;
+  z-index:2;
+}
+.envelope-message.active {
+  opacity:1;
+  transform:translateY(0);
+}
+/* ---------- PAGE 3 ENHANCED ---------- */
+.final{
+  display:flex;
+  gap:26px;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  z-index:2;
+}
+.msg{
+  width:260px;
+  opacity:0;
+  background:rgba(255,255,255,.97);
+  padding:22px;
+  border-radius:18px;
+  color:#4a1c1c;
+  line-height:1.55;
+  transition:1.2s;
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+  transform:translateY(20px);
+}
+.msg.active {
+  opacity:1;
+  transform:translateY(0);
+}
+.box{
+  display:flex;
+  position:relative;
+  cursor:pointer;
+  animation:shine 2.6s infinite;
+  transition:all 0.5s;
+}
+.box:hover {
+  transform:scale(1.05);
+}
+@keyframes shine{
+  0%, 100% {filter:brightness(1);}
+  50% {filter:brightness(1.15);}
+}
+/* 🍫 REAL CHOCOLATE STRUCTURE ENHANCED */
+.chocoBar{
+  width:110px;
+  height:260px;
+  background:linear-gradient(180deg,#6b2a1a,#3b120a);
+  border-radius:18px;
+  padding:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:repeat(4,1fr);
+  gap:8px;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,.08),
+    inset -6px -6px 12px rgba(0,0,0,.35),
+    0 20px 40px rgba(0,0,0,.5);
+  transition:transform 1.2s ease;
+}
+.chocoBar span{
+  background:linear-gradient(135deg,#8a3b2a,#5a1e0f);
+  border-radius:8px;
+  box-shadow:
+    inset 2px 2px 4px rgba(255,255,255,.15),
+    inset -2px -2px 6px rgba(0,0,0,.4);
+  transition:all 0.5s;
+}
+.chocoBar:hover span {
+  background:linear-gradient(135deg,#9a4b3a,#6a2e1f);
+}
+.cut{
+  position:absolute;
+  left:50%;
+  width:4px;
+  height:100%;
+  background:#ffd6d6;
+  opacity:0;
+  transition:all 0.5s;
+}
+.cut.active {
+  opacity:1;
+  box-shadow:0 0 10px #ffd6d6;
+}
+.hint{
+  font-size:13px;
+  opacity:.8;
+  margin-top:8px;
+  animation:pulse 2s infinite;
+}
+/* HEART EXPLOSION */
+.heart-explosion {
+  position:absolute;
+  font-size:24px;
+  color:#ff8fab;
+  opacity:0;
+  z-index:10;
+}
+/* PAGE NAVIGATION DOTS */
+.dots {
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+  z-index:100;
+}
+.dot {
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.3);
+  cursor:pointer;
+  transition:all 0.3s;
+}
+.dot.active {
+  background:#ff4d6d;
+  transform:scale(1.3);
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h1 { font-size:1.8rem; }
+  h2 { font-size:1.5rem; }
+  .scene { height:300px; }
+  .reader { padding:30px; font-size:18px; max-width:90%; }
+  .final { flex-direction:column; }
+  .msg { width:90%; max-width:300px; }
+}
+</style>
+</head>
+<body>
+<!-- Music Toggle -->
+<div class="music-toggle" id="musicToggle">
+  <i class="fas fa-music"></i>
+</div>
+
+<!-- Page Navigation Dots -->
+<div class="dots">
+  <div class="dot active" data-page="1"></div>
+  <div class="dot" data-page="2"></div>
+  <div class="dot" data-page="3"></div>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+  <h1>З Днем шоколаду, Діано 🍫❤️</h1>
+  <p>Маленька історія для тебе…</p>
+  <div class="scene" id="scene">
+    <div class="marker" id="india">🇮🇳 India</div>
+    <div class="marker" id="ukraine">🇺🇦 Ukraine</div>
+    <div id="choco">🍫</div>
+    <div class="arc" id="arc"><span id="pct">0%</span></div>
+  </div>
+  <br><button onclick="start()">Start the Journey <i class="fas fa-heart" style="margin-left:8px;"></i></button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+  <div class="hearts" id="hearts"></div>
+  <div class="reader" id="reader"></div>
+  <div class="scrollBtn" onclick="scrollText()">⬇ Scroll Down ⬇</div>
+  <!-- Envelope surprise -->
+  <div class="envelope" id="envelope"></div>
+  <div class="envelope-message" id="envelopeMessage">
+    <b>P.S.</b><br>Every word in this message comes straight from my heart. I meant each one of them. ❤️
+  </div>
+  <br><button onclick="show(3)">Next <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+  <h2>Поділимось шоколадом 🍫</h2>
+  <div class="final">
+    <div class="msg" id="m1"><b>Для Діани</b> ❤️<br><br>Ти — людина, з якою легко, тепло і завжди цікаво.</div>
+    <div>
+      <div class="box" onclick="cut()">
+        <div class="chocoBar" id="l">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="chocoBar" id="r">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="cut"></div>
+      </div>
+      <div class="hint">Натисни, щоб поділитись</div>
+    </div>
+    <div class="msg" id="m2"><b>Для Аяза</b> ❤️<br><br>Справжній зв'язок — це дружба, тепло і взаємна посмішка.</div>
+  </div>
+  <br>
+  <button onclick="createHeartExplosion()" style="margin-top:20px; background:linear-gradient(135deg, #ff8fab, #ff4d6d);">
+    <i class="fas fa-heart" style="margin-right:8px;"></i> Send Love <i class="fas fa-heart" style="margin-left:8px;"></i>
+  </button>
+</div>
+
+<!-- Audio for background music -->
+<audio id="bgMusic" loop>
+  <source src="https://assets.mixkit.co/music/preview/mixkit-loving-you-117.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Audio for chocolate break -->
+<audio id="breakSound">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-cracking-a-small-wooden-stick-295.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const scene=document.getElementById('scene');
+const ch=document.getElementById('choco');
+const arc=document.getElementById('arc');
+const pct=document.getElementById('pct');
+const startPos={x:22,y:70}, endPos={x:72,y:28};
+let f=0,total=320,run=null;
+let musicOn=false;
+let envelopeOpened=false;
+
+/* Create floating hearts on all pages */
+function createFloatingHearts() {
+  for(let i=0;i<15;i++){
+    const heart=document.createElement('div');
+    heart.className='floating-heart';
+    heart.innerHTML='❤️';
+    heart.style.left=Math.random()*100+'%';
+    heart.style.fontSize=(15+Math.random()*20)+'px';
+    heart.style.animationDuration=(6+Math.random()*6)+'s';
+    heart.style.animationDelay=Math.random()*5+'s';
+    document.body.appendChild(heart);
+  }
+}
+
+/* Initialize stars and hearts */
+(function(){
+  // Stars in scene
+  for(let i=0;i<40;i++){
+    const s=document.createElement('i');
+    s.className='star';
+    s.style.width=s.style.height=(Math.random()*2+1)+'px';
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*100+'%';
+    scene.appendChild(s);
+  }
+  
+  // Floating hearts
+  createFloatingHearts();
+  
+  // Add clickable dots functionality
+  document.querySelectorAll('.dot').forEach(dot => {
+    dot.addEventListener('click', function() {
+      const pageNum = parseInt(this.getAttribute('data-page'));
+      show(pageNum);
+    });
+  });
+})();
+
+/* Music toggle */
+document.getElementById('musicToggle').addEventListener('click', function() {
+  const music = document.getElementById('bgMusic');
+  const icon = this.querySelector('i');
+  
+  if(musicOn) {
+    music.pause();
+    icon.className = 'fas fa-music-slash';
+    this.style.color = '#aaa';
+  } else {
+    music.play().catch(e => console.log("Autoplay prevented, user interaction required"));
+    icon.className = 'fas fa-music';
+    this.style.color = '#ff8fab';
+  }
+  
+  musicOn = !musicOn;
+});
+
+/* START */
+function start(){
+  if(run) return;
+  f=0;
+  // Try to play music when user interacts
+  if(!musicOn) {
+    document.getElementById('bgMusic').play().then(() => {
+      musicOn = true;
+      document.getElementById('musicToggle').querySelector('i').className = 'fas fa-music';
+      document.getElementById('musicToggle').style.color = '#ff8fab';
+    }).catch(e => console.log("Music autoplay prevented"));
+  }
+  
+  run=setInterval(()=>{
+    f++;
+    const t=f/total;
+    const e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+    const x=startPos.x+(endPos.x-startPos.x)*e;
+    const y=startPos.y+(endPos.y-startPos.y)*e;
+    ch.style.left=x+'%';
+    ch.style.top=y+'%';
+    const d=document.createElement('div');
+    d.className='trail';
+    d.style.left=x+'%';
+    d.style.top=y+'%';
+    scene.appendChild(d);
+    setTimeout(()=>d.remove(),900);
+    arc.style.background=`conic-gradient(#ff4d6d ${t*360}deg, rgba(255,255,255,.15) 0deg)`;
+    pct.textContent=Math.floor(t*100)+'%';
+    if(f>=total){
+      clearInterval(run);run=null;
+      // Add celebration effect
+      for(let i=0;i<20;i++){
+        setTimeout(()=>{
+          const heart=document.createElement('div');
+          heart.className='floating-heart';
+          heart.innerHTML='❤️';
+          heart.style.left=Math.random()*100+'%';
+          heart.style.fontSize='24px';
+          heart.style.animationDuration='4s';
+          document.body.appendChild(heart);
+          setTimeout(()=>heart.remove(),4000);
+        }, i*100);
+      }
+      setTimeout(()=>show(2),1000);
+    }
+  },16);
+}
+
+/* PAGE SWITCH */
+function show(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p'+n).classList.add('active');
+  
+  // Update dots
+  document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+  document.querySelector(`.dot[data-page="${n}"]`).classList.add('active');
+  
+  if(n===2) {
+    typeLong();
+    // Add envelope functionality
+    document.getElementById('envelope').addEventListener('click', function() {
+      if(!envelopeOpened) {
+        document.getElementById('envelopeMessage').classList.add('active');
+        envelopeOpened = true;
+        // Close envelope message after 5 seconds
+        setTimeout(() => {
+          document.getElementById('envelopeMessage').classList.remove('active');
+        }, 5000);
+      }
+    });
+  }
+  
+  if(n===3) {
+    // Reset chocolate position
+    document.getElementById('l').style.transform='translateX(0)';
+    document.getElementById('r').style.transform='translateX(0)';
+    document.querySelector('.cut').classList.remove('active');
+    document.getElementById('m1').classList.remove('active');
+    document.getElementById('m2').classList.remove('active');
+    cutDone = false;
+  }
+}
+
+/* PAGE 2 TEXT */
+function typeLong(){
+  const text=`.Діано, з днем шоколаду 🍫🍩🍬💖✨ Трохи прикро 😔💔, що я не можу подарувати тобі шоколад 🍫🎁 власними руками 🤲💞. Але ти повинна відчувати 🥰💫, що це я подарувала тобі шоколад 🍫💝…
+Я бачила 👀✨ щось солодше за шоколад 🍯🍭, я знаю 🤍💭, що це ти, Діано 💕🌸. Ти дуже мила 🥹💖😍… і цей твій солодкий голос 🎶🍬, якби я могла його почути 👂💓, він би зробив мій день ☀️😊🌈.
+Діано 💞, ти стала частиною мого життя 🌍❤️✨… Я дуже тебе поважаю 🤗🌹💎. І я весь час сумую за тобою 😢💔💭… було б так весело 🎉😄, якби ми могли зустрітися 🤝💫 або піти кудись разом 🚶‍♀️🚶‍♂️🌆… ми б щотижня 📅💖 проводили день разом 🌸🥰… о боже 😍✨, це так весело 🎊😆… Я посміхаюся 😊💞, навіть уявляючи це 💭🌈…
+хочеш з'їсти зі мною шоколад? 🍫🍫😋💕 Добре, Діано 💖🌹, з днем шоколаду 🍫🎉🍬💝✨ `;
+  const r=document.getElementById('reader');
+  r.innerHTML='';
+  let i=0;
+  const t=setInterval(()=>{
+    r.innerHTML+=text[i]==='\n'?'<br>':text[i];
+    if(++i>=text.length) clearInterval(t);
+  },28);
+  const H=document.getElementById('hearts');
+  H.innerHTML='';
+  for(let k=0;k<25;k++){
+    const s=document.createElement('span');
+    s.textContent='❤️';
+    s.style.left=Math.random()*100+'%';
+    s.style.fontSize=14+Math.random()*18+'px';
+    s.style.animationDuration=4+Math.random()*4+'s';
+    H.appendChild(s);
+  }
+}
+
+/* Прокрутіть далі */
+function scrollText(){
+  document.getElementById('reader').scrollBy({top:120,behavior:'smooth'});
+}
+
+/* CUT CHOCOLATE */
+let cutDone=false;
+function cut(){
+  if(cutDone) return;
+  cutDone=true;
+  
+  // Play breaking sound
+  document.getElementById('breakSound').play();
+  
+  // Animate chocolate break
+  document.getElementById('l').style.transform='translateX(-40px) rotate(-5deg)';
+  document.getElementById('r').style.transform='translateX(40px) rotate(5deg)';
+  document.querySelector('.cut').classList.add('active');
+  
+  // Show messages with delay
+  setTimeout(() => {
+    document.getElementById('m1').classList.add('active');
+  }, 300);
+  
+  setTimeout(() => {
+    document.getElementById('m2').classList.add('active');
+  }, 800);
+  
+  // Create heart explosion
+  createHeartExplosion();
+}
+
+/* HEART EXPLOSION EFFECT */
+function createHeartExplosion() {
+  const explosionContainer = document.getElementById('p3');
+  
+  for(let i=0;i<30;i++){
+    const heart=document.createElement('div');
+    heart.className='heart-explosion';
+    heart.innerHTML='❤️';
+    heart.style.left=50+Math.random()*40-20+'%';
+    heart.style.top=50+Math.random()*40-20+'%';
+    heart.style.fontSize=(16+Math.random()*24)+'px';
+    explosionContainer.appendChild(heart);
+    
+    // Animate explosion
+    setTimeout(()=>{
+      heart.style.opacity=1;
+      heart.style.transition='all 1s';
+      const angle=Math.random()*Math.PI*2;
+      const distance=100+Math.random()*200;
+      heart.style.transform=`translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px) rotate(${360}deg)`;
+      heart.style.opacity=0;
+      
+      // Remove after animation
+      setTimeout(()=>heart.remove(),1000);
+    }, i*30);
+  }
+}
+</script>
+</body>
+</html>
